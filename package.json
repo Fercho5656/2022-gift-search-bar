@@ -8,11 +8,12 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "9.6.0",
     "debounce": "1.2.1",
     "vue": "3.2.37"
   },
   "devDependencies": {
-    "@types/debounce": "^1.2.1",
+    "@types/debounce": "1.2.1",
     "@vitejs/plugin-vue": "3.0.1",
     "autoprefixer": "10.4.13",
     "postcss": "8.4.18",
