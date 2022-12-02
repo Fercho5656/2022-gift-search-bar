@@ -1,13 +1,3 @@
-<script setup>
-import { ref, watch } from 'vue'
-
-const searchTerm = ref('')
-
-const findProducts = async term => {}
-
-watch(searchTerm, newTerm => findProducts(newTerm))
-</script>
-
 <template>
   <div class="w-full h-full flex flex-col gap-5 justify-center items-center">
     <h1 class="text-4xl font-bold">Gift Search Bar</h1>
@@ -17,3 +7,13 @@ watch(searchTerm, newTerm => findProducts(newTerm))
     </ul>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+
+const searchTerm = ref('')
+
+const findProducts = async (term: string) => { }
+
+watch(searchTerm, newTerm => findProducts(newTerm))
+</script>
