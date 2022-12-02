@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full flex flex-col gap-5 justify-center items-center">
+  <div class="w-full h-full dark:bg-gray-dark dark:text-gray-200 flex flex-col gap-5 justify-center items-center">
     <h1 class="text-4xl font-bold">Gift Search Bar</h1>
-    <input :disabled="isSearching" type="text" class="p-2 rounded-md border-2 border-gray-dark disabled:opacity-50"
+    <input :disabled="isSearching" type="text" class="p-2 rounded-md border-2 border-gray-dark disabled:opacity-80 dark:text-gray-dark"
       v-model="searchTerm" placeholder="Start typing..." />
     <spinner v-show="isSearching" />
     <ul class="list-disc">
@@ -18,10 +18,14 @@ import spinner from './components/spinner.vue'
 import { debounce } from 'debounce'
 import findProducts from './services/findProducts';
 import IProducts from './interfaces/IProducts';
+import { useDark, useToggle } from '@vueuse/core';
+
 
 const searchTerm = ref('')
 const searchResults = ref<IProducts>()
 const isSearching = ref(false)
+const isDark = useDark()
+useToggle(isDark)
 
 const onSearchTermChange = debounce(async (term: string) => {
   isSearching.value = true
