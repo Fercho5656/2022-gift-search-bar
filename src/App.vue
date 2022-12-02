@@ -1,10 +1,10 @@
 <template>
   <div class="w-full h-full dark:bg-gray-dark dark:text-gray-200 flex flex-col gap-5 justify-center items-center">
     <h1 class="text-4xl font-bold">Gift Search Bar</h1>
-    <input :disabled="isSearching" type="text" class="p-2 rounded-md border-2 border-gray-dark disabled:opacity-80 dark:text-gray-dark"
+    <input :disabled="isSearching" type="text" class="p-2 rounded-md border-2 text-xl border-gray-dark dark:text-gray-dark disabled:opacity-80"
       v-model="searchTerm" placeholder="Start typing..." />
     <spinner v-show="isSearching" />
-    <ul class="list-disc">
+    <ul class="list-disc text-xl">
       <li v-for="product in searchResults?.products" :key="product.id">
         {{ product.title }}
       </li>
