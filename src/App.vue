@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full dark:bg-gray-dark dark:text-gray-200 flex flex-col gap-5 justify-center items-center">
+  <div class="w-full h-full dark:bg-gray-dark dark:text-gray-200 flex flex-col gap-5 justify-center items-center transition-all">
     <h1 class="text-4xl font-bold">Gift Search Bar</h1>
-    <input :disabled="isSearching" type="text" class="p-2 rounded-md border-2 text-xl border-gray-dark dark:text-gray-dark disabled:opacity-80"
+    <input :disabled="isSearching" type="text" class="p-2 rounded-md border-2 text-xl border-gray-dark dark:border-gray-50 dark:text-gray-dark disabled:opacity-80"
       v-model="searchTerm" placeholder="Start typing..." />
     <spinner v-show="isSearching" />
     <ul class="list-disc text-xl">
